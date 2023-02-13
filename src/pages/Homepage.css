@@ -1,0 +1,171 @@
+.main {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    margin-top: 64px;
+    text-align: center;
+}
+
+.main__container {
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+
+
+/* Main - Header */
+.suptitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #159EEC;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1F2B6C;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #212124;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.learnMore-btn {
+    margin-bottom: 61px;
+}
+
+.learnMore-btn a {
+    text-decoration: none;
+    color: #159EEC;
+}
+
+.learnMore-btn img {
+    margin-left: 10px;
+}
+
+
+
+/* Main */
+.main__content-img {
+    height: 500px;
+    border-bottom: 10px solid #159EEC;
+    border-radius: 10px;
+    margin-bottom: 64px;
+}
+
+
+
+/* Main - Slogan - Desc */
+.main__slogan {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 40px;
+    margin-bottom: 128px;
+}
+
+.slogan__buttons {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid #1F2B6C;
+    border-radius: 5px;
+}
+
+.slogan__buttons button {
+    padding: 25px 25px;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+    border: 0;
+    transition: .3s ease;
+    cursor: pointer
+}
+
+#btn-first {
+    border-radius: 5px 5px 0 0;
+}
+#btn-last {
+    border-radius: 0 0 5px 5px;
+}
+
+.slogan__buttons button:hover {
+    transition: .3s ease;
+    background: #1F2B6C;
+    color: #BFD2F8;
+}
+
+.slogan__buttons img {
+    margin-bottom: 10px;
+}
+
+.slogan__desc {
+    padding-top: 5px;
+}
+
+.desc__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 32px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;   
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.desc__items-point {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.desc__text {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+.slogan__images img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Main - Specialization */
+.main__specializations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #1f2b6c47;
+    margin-bottom: 64px;
+}
+
+.specializations__button {
+    padding: 50px 50px;    
+    background: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #212124;
+    border: 1px solid #1f2b6c47;
+    transition: .3s ease;
+    cursor: pointer
+}
+
+.specializations__button:hover {
+    transition: .3s ease;
+    background: #1F2B6C;
+    color: #BFD2F8;
+}
+
+.specializations__button img {
+    margin-bottom: 10px;
+}

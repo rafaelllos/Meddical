@@ -1,0 +1,40 @@
+.desc__section-quotes {
+    padding: 64px 0;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quotes__container {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quotes__container img {
+    margin-bottom: 40px;
+}
+
+.quotes__container p {
+    font-size: 22px;
+    color: #FCFEFE;
+}
+
+.quotes__text {
+    margin-bottom: 20px;
+}
+
+.quotes__divider {
+    width: 220px;
+    border-bottom: 1px solid #BFD2F8;
+    margin-bottom: 20px;
+}
+
+.quotes__name {
+    margin-bottom: 30px;
+}

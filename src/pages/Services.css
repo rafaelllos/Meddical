@@ -1,0 +1,137 @@
+.services__container {
+    max-width: 992px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.services h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.services h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1F2B6C;
+    text-align: center;
+    margin: 50px;
+}
+  
+details {
+    width: 75%;
+    min-height: 5px;
+    max-width: 700px;
+    padding: 45px 70px 45px 45px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 18px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: all .4s;
+}
+  
+.services details h3 {
+    font-size: 18px;
+}
+
+.services details + details {
+    margin-top: 20px;
+}
+  
+.services details[open] {
+    min-height: 50px;
+    background-color: #f6f7f8;
+    box-shadow: 3px 3px 30px rgba(0, 0, 0, .2);
+}
+  
+.services details p {
+    color: #96999d;
+    margin: 20px 0;
+}
+
+.services details p h3 {
+    margin: 20px 0px;
+}
+
+.services details p ul {
+    margin: 20px;
+}
+
+.services details p ul li {
+    margin-bottom: 10px;
+}
+
+.services details p span {
+    font-weight: 600;
+}
+
+.services summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+  
+.services summary:focus {
+    outline: none;
+}
+  
+/* .services summary:focus::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 5px rebeccapurple;
+} */
+  
+.services .servicessummary::-webkit-details-marker {
+    display: none
+}
+  
+.control-icon {
+    fill: black;
+    transition: .3s ease;
+    pointer-events: none;
+}
+  
+.control-icon-close {
+    display: none;
+}
+  
+.services details[open] .control-icon-close {
+    display: initial;
+    transition: .3s ease;
+}
+
+.services details[open] .control-icon-expand {
+    display: none;
+}
+
+.services__images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+    margin: 40px 0;
+}
+
+.services__images-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.services__images p {
+    text-align: center;
+}
+
+#alcohol-icon {
+    margin-right: 40px;
+}
