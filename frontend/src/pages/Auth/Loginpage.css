@@ -24,22 +24,29 @@
     text-align: center;
 }
 
-.auth__box .user__box {
+.user__box {
     position: relative;
 }
 
-.auth__box .user__box input {
+.user__box input {
     width: 100%;
     padding: 10px 0;
     font-size: 18px;
     color: #fff;
-    margin-bottom: 40px;
     border: none;
     border-bottom: 1px solid #159EEC;
     outline: none;
     background: transparent;
+    margin-bottom: 10px;
 }
-.auth__box .user__box label {
+
+.user__box p {
+    color: red;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.user__box label {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,8 +57,8 @@
     transition: .5s;
 }
 
-.auth__box .user__box input:focus ~ label,
-.auth__box .user__box input:valid ~ label {
+.user__box input:focus ~ label,
+.user__box input:valid ~ label {
     top: -30px;
     left: 0;
     color: #159EEC;
@@ -66,7 +73,7 @@
     column-gap: 40px;
 }
 
-.auth__box form a {
+.auth__box input[type=submit] {
     position: relative;
     padding: 10px 20px;
     color: #159EEC;
@@ -76,20 +83,45 @@
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    border: 0;
+    background: #1F2B6C;
 }
 
-.auth__box a:hover {
+.auth__box input[type=submit]:hover {
     background: #159EEC;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 0 5px #159EEC,
                 0 0 25px #159EEC,
                 0 0 50px #159EEC,
                 0 0 100px #159EEC;
 }
 
-.auth__box a span {
+.auth__box a {
+    position: relative;
+    padding: 10px 20px;
+    color: #159EEC;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.auth__box a:hover {
+    background: #159EEC;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #159EEC,
+                0 0 25px #159EEC,
+                0 0 50px #159EEC,
+                0 0 100px #159EEC;
+}
+
+/* .auth__box a span {
     position: absolute;
     display: block;
 }
@@ -167,4 +199,4 @@
     50%,100% {
         bottom: 100%;
     }
-}
+} */

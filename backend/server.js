@@ -20,19 +20,19 @@ connection.connect(err => {
         console.log(err)
         return err
     }
-    else {
-        console.log('Database connected!') 
-    }
+    else console.log('Database connected!')
 })
 
 app.use(express.json())
 app.use(cors())
 
+
 app.get('/', (req, res) => {
     res.json('Homepage')
 })
 
-app.get('/data', (req, res) => {
+
+app.get('/applications', (req, res) => {
     const q = 'SELECT * FROM applications;'
 
     connection.query(q, (err, results) => {
@@ -41,10 +41,11 @@ app.get('/data', (req, res) => {
     })
 })
 
-app.post('/data', (req, res) => {
+
+app.post('/applications', (req, res) => {
     const q = 'INSERT INTO applications ' + 
     '(user_name, user_gender, user_email, user_phone, application_date, application_time, application_department, user_text) VALUES(?);'
-    // const values = ["Сергей", "Мужской", "deminov@gmail.com", "79003563743", "25.02.2023", "18:10", "Неврология"]
+
     const values = [
         req.body.user_name,
         req.body.user_gender,
@@ -62,7 +63,28 @@ app.post('/data', (req, res) => {
     })
 })
 
-// connection.query(
-//     'INSERT INTO applications (user_name, user_gender, user_email, user_phone, application_date, application_time, application_department) ' +
-//     'VALUES("Рафаэль", "Мужской", "cobberaf@gmail.com", "79003203722", "18.02.2023", "16:30", "Офтальмология");',
-// )
+
+app.get('/auth', (req, res) => {
+    const q = 'SELECT * FROM auth;'
+
+    connection.query(q, (err, results) => {
+        if (err) return res.json(err)
+        return res.json(results)
+    })
+})
+
+
+app.post('/auth', (req, res) => {
+    const q = 'INSERT INTO auth ' + 
+        '(user_email, user_password) VALUES(?);'
+
+    const values = [
+        req.body.email,
+        req.body.password
+    ]
+
+    connection.query(q, [values], (err, results) => {
+        if (err) return res.json(err)
+        return res.json('Data delivered into DB!')
+    })
+})

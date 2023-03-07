@@ -2,40 +2,69 @@ import './Loginpage.css';
 
 import { Link } from 'react-router-dom';
 
+import axios from 'axios';
+
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const Schema = Yup.object().shape({
+    email: Yup.string()
+        .email('Некорректный email-адрес')
+        .required('Обязательно к заполнению'),
+    password: Yup.string()
+        .min(6, "Длина пароля должна составлять минимум 6 символов, но не больше 100 символов")
+        .max(100, 'Длина пароля должна составлять минимум 6 символов, но не больше 100 символов')
+        .required('Обязательно к заполнению'),
+})
+
 function Loginpage() {
-    return (  
-        <div className="auth__container">
-            <div className="auth__box">
-                <h2>Авторизация</h2>
-                <form>
-                    <div className="user__box">
-                        <input type="text" name="" required="" />
-                        <label>Почта</label>
-                    </div>
-                    <div className="user__box">
-                        <input type="password" name="" required="" />
-                        <label>Пароль</label>
-                    </div>
-                    <div className="login__links">
-                        <a href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Войти
-                        </a>
-                            
-                        <Link to="/register">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Регистрация
-                        </Link>
-                    </div>
-                </form>
-            </div>
-        </div>
+    return ( 
+        <Formik
+            initialValues={
+                {
+                    email: '',
+                    password: ''
+                }
+            }
+
+            validationSchema={Schema}    
+
+            onSubmit={
+                async (values) => {
+                    try {
+                        await axios.post('http://localhost:8800/auth', values)
+                        alert('Data sent to DB!')
+                    } catch (err) {
+                        console.log(err)
+                    }
+                }
+            }        
+        >
+            <Form className="auth__container" autoComplete="off">
+                <div className="auth__box">
+                    <h2>Авторизация</h2>
+                    <form>
+                        <div className="user__box">
+                            <Field type="text" name="email" /> 
+                            <label>Почта</label>
+                            <p><ErrorMessage name="email" /></p>
+                        </div>
+                        <div className="user__box">
+                            <Field type="text" name="password" /> 
+                            <label>Пароль</label>
+                            <p><ErrorMessage name="password" /></p>
+                        </div>
+                        <div className="login__links">
+                            <Field name="auth_submit" type="submit" value="Войти" />
+                                
+                            <Link to="/register">
+                                Регистрация
+                            </Link>
+                        </div>
+                    </form>
+                </div>
+            </Form>
+        </Formik> 
     );
 }
 
