@@ -35,10 +35,10 @@ function Footer() {
                         <p>Адрес: г. Казань, ул. Гвардейская, 16А</p>
                     </div>
 
-                    <div className="footer__item">
+                    {/* <div className="footer__item">
                         <p className="footer__title">Новостная рассылка</p>
                         <input type="text" placeholder="Введите свой email-адрес" />
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="footer__divider"></div>

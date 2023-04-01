@@ -17,18 +17,13 @@ function Navbar() {
                 </div>
                 
                 <div className="navbar__container-item">
-                    {/* <img src={search_icon} alt="Search" width={30} height={30} /> */}
-                    <button className="navbar__container-button">
-                        <HashLink to={{
-                            pathname: "/",
-                            hash: "#bookForm"  
-                        }}>
-                            Запись на прием 
-                        </HashLink>
-                    </button>
-                    <button className="navbar__container-button">
-                        <Link to="/login">Личный кабинет</Link>
-                    </button>
+                    <HashLink class="item__buttons" to={{
+                        pathname: "/",
+                        hash: "#bookForm"  
+                    }}>
+                        Запись на прием 
+                    </HashLink>
+                    <Link class="item__buttons" to="/login">Личный кабинет</Link>
                 </div>
             </div>
         </nav>

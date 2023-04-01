@@ -38,7 +38,7 @@
     color: #a7c6ff;
 }
 
-.navbar__container-button {
+.item__buttons {
     display: flex;
     padding: 13px 25px;
     border-radius: 50px;
@@ -47,14 +47,10 @@
     border: 0px;
     margin-left: 10px;
     cursor: pointer;
-    transition: .3s ease;
-}
-
-.navbar__container-button a {
     color: #1F2B6C !important;
 }
 
-.navbar__container-item button:hover {
+.item__buttons:hover {
     transition: .3s ease;
     background-color: #a7c6ff;
 }

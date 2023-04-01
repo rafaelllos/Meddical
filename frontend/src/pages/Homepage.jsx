@@ -1,6 +1,7 @@
 import './Homepage.css';
 
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import axios from 'axios'
 
@@ -55,7 +56,7 @@ function Homepage() {
                     штата опытных медиков правильного и нужного вам специалиста!
                 </p>
                 <div className="learnMore-btn">
-                    <a href="https://google.com/">Изучить больше</a>
+                    <Link to="/about">Изучить больше</Link>
                     <img src={arrow_to_right} alt="" width={10} height={10} />
                 </div>
 

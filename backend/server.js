@@ -1,3 +1,5 @@
+import { sendMail } from './mailer.js'
+
 import express from 'express'
 import mysql from 'mysql2'
 import cors from 'cors'
@@ -24,23 +26,24 @@ connection.connect(err => {
 })
 
 app.use(express.json())
+app.use(express.urlencoded( {extended: false} ))
 app.use(cors())
 
 
+
 app.get('/', (req, res) => {
-    res.json('Homepage')
+    res.send('Homepage')
 })
+
 
 
 app.get('/applications', (req, res) => {
     const q = 'SELECT * FROM applications;'
 
-    connection.query(q, (err, results) => {
-        if (err) return res.json(err)
-        return res.json(results)
+    connection.query(q, (err, response) => {
+        return res.send(response)
     })
 })
-
 
 app.post('/applications', (req, res) => {
     const q = 'INSERT INTO applications ' + 
@@ -57,34 +60,46 @@ app.post('/applications', (req, res) => {
         req.body.user_text
     ]
 
-    connection.query(q, [values], (err, results) => {
-        if (err) return res.json(err)
-        return res.json('Data delivered into DB!')
+    connection.query(q, [values], (err, response) => {
+        return res.send('Заявка создана!')
     })
+
+    sendMail(req.body.user_name, req.body.user_phone, req.body.application_date, req.body.application_time, req.body.application_department)
 })
 
 
-app.get('/auth', (req, res) => {
+
+app.get('/register', (req, res) => {
     const q = 'SELECT * FROM auth;'
 
-    connection.query(q, (err, results) => {
-        if (err) return res.json(err)
-        return res.json(results)
+    connection.query(q, (err, response) => {
+        return res.send(response)
     })
 })
 
+app.post('/register', (req, res) => {
+    const q = "SELECT * FROM auth WHERE user_email = ?;"
+	let email = req.body.email
+	let password = req.body.password
 
-app.post('/auth', (req, res) => {
-    const q = 'INSERT INTO auth ' + 
-        '(user_email, user_password) VALUES(?);'
+	connection.query(q, email, (err, resp) => {
+        if (resp.length < 1) {
+            const query = "INSERT INTO auth (user_email, user_password) VALUES(?, ?);"
 
-    const values = [
-        req.body.email,
-        req.body.password
-    ]
+            connection.query(query, [email, password], (err, response) => {
+                return res.send("Регистрация прошла успешно!")
+            })
+        }
+        else return res.send('Пользователь с таким email уже существует!')
+	})
+})
 
-    connection.query(q, [values], (err, results) => {
-        if (err) return res.json(err)
-        return res.json('Data delivered into DB!')
+
+
+app.get('/login', (req, res) => {
+    const q = 'SELECT * FROM auth;'
+
+    connection.query(q, (err, response) => {
+        return res.json(response)
     })
 })

@@ -1,0 +1,43 @@
+.account__container {
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.account__title {
+    font-size: 24px;
+    color: #159EEC;
+    font-weight: 600;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.account__item-title {
+    font-size: 30px;
+    color: #1F2B6C;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.account__item-tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.account__item-table {
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.account__item-table p {
+    font-size: 18px;
+}
+
+.account__item-table p span {
+    font-weight: 500;
+}

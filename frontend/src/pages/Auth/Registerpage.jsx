@@ -1,4 +1,5 @@
-import './Loginpage.css';
+import './Auth.css';
+// import { hide_password } from '../../components/helper.jsx'
 
 import axios from 'axios';
 
@@ -30,8 +31,9 @@ function Registerpage() {
             onSubmit={
                 async (values) => {
                     try {
-                        await axios.post('http://localhost:8800/auth', values)
-                        alert('Data sent to DB!')
+                        await axios
+                            .post('http://localhost:8800/register', values)
+                            .then(data => alert(data.data))
                     } catch (err) {
                         console.log(err)
                     }

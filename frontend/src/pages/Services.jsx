@@ -336,7 +336,7 @@ function Services() {
                         </p>
                     </details>
 
-                    <h2>Отолорингология</h2>
+                    <h2>Отоларингология</h2>
                     <details>
                         <summary>
                             <h1>Лечение гайморита</h1>   

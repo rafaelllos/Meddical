@@ -48,8 +48,9 @@ function InputForm() {
             onSubmit={
                 async (values) => {
                     try {
-                        await axios.post('http://localhost:8800/applications', values)
-                        alert('Data sent to DB!')
+                        await axios
+                            .post('http://localhost:8800/applications', values)
+                            .then(data => alert(data.data))
                     } catch (err) {
                         console.log(err)
                     }

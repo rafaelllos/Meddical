@@ -1,4 +1,4 @@
-import './Loginpage.css';
+import './Auth.css';
 
 import { Link } from 'react-router-dom';
 
@@ -33,7 +33,6 @@ function Loginpage() {
                 async (values) => {
                     try {
                         await axios.post('http://localhost:8800/auth', values)
-                        alert('Data sent to DB!')
                     } catch (err) {
                         console.log(err)
                     }

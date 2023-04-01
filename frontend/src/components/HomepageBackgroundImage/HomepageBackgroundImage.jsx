@@ -17,9 +17,7 @@ function IndexPageBackground() {
                     Лидирующие позиции <br /> в области медицины                
                 </p>
                 
-                <button>
-                    <Link to="/services"> Наши услуги</Link>
-                </button>
+                <Link to="/services"> Наши услуги</Link>
             </div>
         </section>
     );

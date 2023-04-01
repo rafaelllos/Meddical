@@ -23,7 +23,7 @@
     margin-bottom: 32px;
 }
 
-.section__container button {
+.section__container a {
     padding: 13px 35px;
     border-radius: 50px;
     background: #BFD2F8;
@@ -32,15 +32,11 @@
     font-weight: 600;
     border: 0px;
     cursor: pointer;
+    text-decoration: none;
     transition: .3s ease;
 }
 
-.section__container button:hover {
+.section__container a:hover {
     transition: .3s ease;
     background-color: #a7c6ff;
-}
-
-.section__container a {
-    color: #1F2B6C;
-    text-decoration: none;
 }

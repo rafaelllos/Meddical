@@ -13,7 +13,7 @@ import Services from './pages/Services.jsx';
 import Doctorspage from './pages/Doctorspage.jsx';
 import Loginpage from './pages/Auth/Loginpage.jsx'
 import Registerpage from './pages/Auth/Registerpage.jsx';
-import SignupForm from './pages/Auth/SignupForm.jsx';
+import Accountpage from './pages/Accountpage.jsx'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
             <Route path='doctors' element={<Doctorspage />} />
             <Route path='login' element={<Loginpage />} />
             <Route path='register' element={<Registerpage />} />
-            <Route path='signup' element={<SignupForm />} />
+            <Route path='account' element={<Accountpage />} />
           </Route>
         </Routes>
       </Router>

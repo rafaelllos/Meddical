@@ -1,4 +1,5 @@
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
     service: 'Yandex',
@@ -13,13 +14,17 @@ const transporter = nodemailer.createTransport({
 	tls: {
 		rejectUnAuthorized: true
 	}
-});
+})
 
-const mailOptions = {
-    from: 'cobberaf2@yandex.ru',
-    to: 'cobberaf2@yandex.ru',
-    subject: 'Тестовое письмо Node.js',
-    text: 'Это тестовое письмо, отправленное с помощью Node.js.'
-};
+export function sendMail(name, phone, date, time, department) {
+    const mailOptions = {
+        from: 'cobberaf2@yandex.ru',
+        to: 'cobberaf@gmail.com',
+        subject: 'Запись на прием к врачу в Meddical',
+        text: `Здравствуйте, ${name}! Ваша заявка на прием к врачу принята.\nВаш телефон: ${phone}\nДата приема: ${date}\n` 
+        + `Время приема: ${time}\nОтдел: ${department}\nПожалуйста не опаздывайте!\nСпасибо, ${name} за то, что выбрали нашу клинику!`
+    }
 
-transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions)
+}
+

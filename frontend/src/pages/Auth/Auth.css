@@ -40,6 +40,12 @@
     margin-bottom: 10px;
 }
 
+.auth__box p {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}   
+
 .user__box p {
     color: red;
     margin-bottom: 50px;
@@ -82,7 +88,7 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin-top: 50px;
     letter-spacing: 4px;
     border: 0;
     background: #1F2B6C;
