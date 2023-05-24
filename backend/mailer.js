@@ -1,5 +1,4 @@
-// const nodemailer = require('nodemailer')
-import nodemailer from 'nodemailer'
+const nodemailer = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
     service: 'Yandex',
@@ -16,7 +15,7 @@ const transporter = nodemailer.createTransport({
 	}
 })
 
-export function sendMail(name, phone, date, time, department) {
+const sendMail = (name, phone, date, time, department) => {
     const mailOptions = {
         from: 'cobberaf2@yandex.ru',
         to: 'cobberaf@gmail.com',

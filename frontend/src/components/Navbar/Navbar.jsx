@@ -1,9 +1,7 @@
-import './Navbar.css';
+import './Navbar.css'
 
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
-
-// import search_icon from '../../images/search-icon.svg';
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 function Navbar() {
     return (  
@@ -17,17 +15,17 @@ function Navbar() {
                 </div>
                 
                 <div className="navbar__container-item">
-                    <HashLink class="item__buttons" to={{
+                    <HashLink className="item__buttons" to={{
                         pathname: "/",
                         hash: "#bookForm"  
                     }}>
                         Запись на прием 
                     </HashLink>
-                    <Link class="item__buttons" to="/login">Личный кабинет</Link>
+                    <Link className="item__buttons" to="/login">Личный кабинет</Link>
                 </div>
             </div>
         </nav>
     );
 }
 
-export default Navbar;
+export default Navbar

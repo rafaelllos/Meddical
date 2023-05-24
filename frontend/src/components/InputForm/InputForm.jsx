@@ -49,8 +49,8 @@ function InputForm() {
                 async (values) => {
                     try {
                         await axios
-                            .post('http://localhost:8800/applications', values)
-                            .then(data => alert(data.data))
+                            .post('http://localhost:5000/applications', values)
+                            .then(res => alert(res.data.message))
                     } catch (err) {
                         console.log(err)
                     }

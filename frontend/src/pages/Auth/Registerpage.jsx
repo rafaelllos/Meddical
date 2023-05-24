@@ -1,10 +1,9 @@
-import './Auth.css';
-// import { hide_password } from '../../components/helper.jsx'
+import './Auth.css'
 
-import axios from 'axios';
+import axios from 'axios'
 
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 
 const Schema = Yup.object().shape({
     email: Yup.string()
@@ -32,8 +31,21 @@ function Registerpage() {
                 async (values) => {
                     try {
                         await axios
-                            .post('http://localhost:8800/register', values)
-                            .then(data => alert(data.data))
+                            .post('http://localhost:5000/auth/registration', values)
+                            .then(res => {
+                                // Если сервер вернул true после отправки данных в БД, то происходит следующее
+                                if (res.data === true) {
+                                    // Переадресовывает пользователя на страницу login
+                                    window.location.href = "http://localhost:3000/login"
+                                } else {
+                                    // return res.json({message: 'User with this email already registered'}) - обрабатывает
+                                    // эту строку и выводит текст из объекта
+                                    alert(res.data.message)
+                                }
+                            })
+                            .catch(() => {
+                                alert("An error occurred on the server")
+                            })
                     } catch (err) {
                         console.log(err)
                     }
@@ -49,7 +61,7 @@ function Registerpage() {
                         <p><ErrorMessage name="email" /></p>
                     </div>
                     <div className="user__box">
-                        <Field type="text" name="password" /> 
+                        <Field type="password" name="password" /> 
                         <label>Пароль</label>
                         <p><ErrorMessage name="password" /></p>
                     </div>
@@ -62,4 +74,4 @@ function Registerpage() {
     );
 }
 
-export default Registerpage;
+export default Registerpage

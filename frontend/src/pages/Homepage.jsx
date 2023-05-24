@@ -29,16 +29,16 @@ import {
 function Homepage() {
     // const [data, setData] = useState([])
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get('http://localhost:8800/data')
-            } catch(err) {
-                console.log(err)
-            }
-        }
-        fetchData()
-    }, [])
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const res = await axios.get('http://localhost:8800/data')
+    //         } catch(err) {
+    //             console.log(err)
+    //         }
+    //     }
+    //     fetchData()
+    // }, [])
 
     return (  
     <>
