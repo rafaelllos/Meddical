@@ -49,8 +49,13 @@ function InputForm() {
                 async (values) => {
                     try {
                         await axios
-                            .post('http://localhost:5000/applications', values)
-                            .then(res => alert(res.data.message))
+                            .post('/application', values)
+                            .then(res => {
+                                alert(res.data.message)
+                            })
+                            .catch(() => {
+                                alert("An error occurred on the server")
+                            })
                     } catch (err) {
                         console.log(err)
                     }

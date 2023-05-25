@@ -10,7 +10,7 @@ function Doctorspage() {
                 <Headling suptitle="Надежная забота" title="Наши врачи" />
 
                 <div className="doctors">
-                    { doctor_card.map((item) => 
+                    { doctor_card?.map((item) => 
                         <Doctors item={item} />
                     )}
                 </div>

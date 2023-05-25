@@ -3,12 +3,38 @@
     margin: 0 auto;
 }
 
-.account__title {
+.account__flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex__title {
     font-size: 24px;
     color: #159EEC;
     font-weight: 600;
     padding-top: 50px;
     margin-bottom: 50px;
+}
+
+.flex__btn {
+    font-size: 14px;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #BFD2F8;
+    font-weight: 600;
+    border: 0px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #1F2B6C !important;
+    transition: .3s ease;
+}
+
+.flex__btn:hover {
+    transition: .3s ease;
+    background-color: #a7c6ff;
 }
 
 .account__item-title {

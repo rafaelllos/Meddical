@@ -21,7 +21,7 @@ function Navbar() {
                     }}>
                         Запись на прием 
                     </HashLink>
-                    <Link className="item__buttons" to="/login">Личный кабинет</Link>
+                    <Link className="item__buttons" to="/account">Личный кабинет</Link>
                 </div>
             </div>
         </nav>

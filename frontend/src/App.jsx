@@ -13,7 +13,9 @@ import Services from './pages/Services.jsx'
 import Doctorspage from './pages/Doctorspage.jsx'
 import Loginpage from './pages/Auth/Loginpage.jsx'
 import Registerpage from './pages/Auth/Registerpage.jsx'
-import Accountpage from './pages/Auth/Accountpage.jsx'
+import Accountpage from './pages/Auth/Accountpage/Accountpage.jsx'
+
+import PrivateRoute from './pages/Auth/PrivateRoute'
 
 import ABC from './pages/Auth/ABC.jsx'
 
@@ -31,14 +33,16 @@ const App = () => {
             <Route path='registration' element={<Registerpage />} />
             <Route path='ABC' element={<ABC />} />
 
-            <Route path='account' element={<Accountpage /> } />
+            <Route element={<PrivateRoute />}>
+              <Route path='account' element={<Accountpage />} />
+            </Route>
 
             <Route path="*" element={<div>404... not found </div>} />
           </Route>
         </Routes>
       </Router>
     </>
-  );
+  )
 }
 
 export default App

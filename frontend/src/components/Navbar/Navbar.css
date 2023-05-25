@@ -48,6 +48,7 @@
     margin-left: 10px;
     cursor: pointer;
     color: #1F2B6C !important;
+    transition: .3s ease;
 }
 
 .item__buttons:hover {

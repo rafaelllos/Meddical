@@ -1,16 +1,13 @@
 import './Homepage.css';
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import axios from 'axios'
-
-import HomepageBackgroundImage from '../components/HomepageBackgroundImage/HomepageBackgroundImage.jsx';
-import Opportunities from '../components/Opportunities/Opportunities.jsx';
-import Headling from '../components/Headling/Headling.jsx';
-import InputForm from '../components/InputForm/InputForm.jsx';
-import Doctors from '../components/Doctors/Doctors.jsx';
-import Contacts from '../components/Contacts/Contacts.jsx';
+import HomepageBackgroundImage from '../components/HomepageBackgroundImage/HomepageBackgroundImage.jsx'
+import Opportunities from '../components/Opportunities/Opportunities.jsx'
+import Headling from '../components/Headling/Headling.jsx'
+import InputForm from '../components/InputForm/InputForm.jsx'
+import Doctors from '../components/Doctors/Doctors.jsx'
+import Contacts from '../components/Contacts/Contacts.jsx'
 
 import {  
     bestDoctors_card,
@@ -24,22 +21,9 @@ import {
     slogan_doctor,
     slogan_doctor1,
     heart,
-} from '../components/helper.jsx';
+} from '../components/helper.jsx'
 
 function Homepage() {
-    // const [data, setData] = useState([])
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const res = await axios.get('http://localhost:8800/data')
-    //         } catch(err) {
-    //             console.log(err)
-    //         }
-    //     }
-    //     fetchData()
-    // }, [])
-
     return (  
     <>
         <HomepageBackgroundImage />
@@ -184,7 +168,7 @@ function Homepage() {
             <Contacts />
         </main>
     </>
-    );
+    )
 }
 
-export default Homepage;
+export default Homepage

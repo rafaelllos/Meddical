@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 	}
 })
 
-const sendMail = (name, phone, date, time, department) => {
+const sendMail = async (name, phone, date, time, department) => {
     const mailOptions = {
         from: 'cobberaf2@yandex.ru',
         to: 'cobberaf@gmail.com',
@@ -24,6 +24,7 @@ const sendMail = (name, phone, date, time, department) => {
         + `Время приема: ${time}\nОтдел: ${department}\nПожалуйста не опаздывайте!\nСпасибо, ${name} за то, что выбрали нашу клинику!`
     }
 
-    transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
 }
 
+module.exports = sendMail
