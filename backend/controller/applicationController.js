@@ -22,12 +22,12 @@ class applicationController {
                 return res.json( {message: 'Заявка создана!'} )
             })
 
-            sendMail(
-                req.body.user_name, 
-                req.body.user_phone, 
-                req.body.application_date, 
-                req.body.application_time, 
-                req.body.application_department)
+            // sendMail(
+            //     req.body.user_name, 
+            //     req.body.user_phone, 
+            //     req.body.application_date, 
+            //     req.body.application_time, 
+            //     req.body.application_department)
         } catch (e) {
             console.log(e)
             return res.json( {message: 'Application error'} )
@@ -42,7 +42,7 @@ class applicationController {
                 "FROM applications WHERE user_email = ?;", email, (err, resp) => {
                 if (resp !== undefined)
                     if (resp.length < 1) 
-                        return res.json( {message: 'Email error'} )
+                        return res.json([])
 
                 return res.send(resp)
             })

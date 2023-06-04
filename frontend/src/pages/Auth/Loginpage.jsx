@@ -1,11 +1,11 @@
 import './Auth.css';
 
 import { useAuth } from '../../hooks/useAuth.js'
-import { Link, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import { Link, Navigate } from 'react-router-dom'
+import axios from 'axios'
 
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 
 import checkAndSetToken from './checkAndSetToken.js'
 

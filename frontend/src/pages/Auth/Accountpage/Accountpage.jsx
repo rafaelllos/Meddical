@@ -16,11 +16,19 @@ const obj1 = Array.from(map).reduce((obj_ids, [value]) => (
 const Accountpage = () => {
     const [arrays, setArrays] = useState([])
 
-    axios
-        .get(`/getApplication/${obj1.value}`)
-        .then(res => {
-            setArrays(res.data)
-        })
+    let output
+    if (arrays !== "" && arrays !== null && arrays !== undefined)
+        output = arrays?.map((data) => (<AccountItem info={data} />))
+    else
+        output = ""
+
+    if (obj1.value !== "" && obj1.value !== null && obj1.value !== undefined)
+        axios
+            .get(`/getApplication/${obj1.value}`)
+            .then(res => {
+                if (res.data)
+                    setArrays(res.data)
+            })
 
     return ( 
         <>
@@ -33,9 +41,7 @@ const Accountpage = () => {
                 <div className="account__item">
                     <p className="account__item-title">Ваши записи в клинике</p>
                     <div className="account__item-tables">    
-                        { arrays?.map((data) => (
-                            <AccountItem info={data} /> 
-                        ))}
+                        { output }
                     </div>
                 </div>
             </div>  
